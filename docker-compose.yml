@@ -1,0 +1,15 @@
+servlet-engine:
+  restart: always
+  image: wagner83104/servlet-engine:master
+  volumes:
+    - /Users/wagnert/Workspace/example/src:/opt/appserver/webapps/example
+message-queue:
+  restart: always
+  image: wagner83104/message-queue:master
+  volumes:
+    - /Users/wagnert/Workspace/example/src:/opt/appserver/webapps/example
+ssh-server:
+  restart: always
+  image: wagner83104/ssh-server:master
+  volumes:
+    - /Users/wagnert/Workspace/example/src:/opt/appserver/webapps/example
