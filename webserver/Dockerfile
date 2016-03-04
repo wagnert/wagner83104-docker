@@ -1,5 +1,5 @@
 ################################################################################
-# Dockerfile for appserver.io servlet-engine service
+# Dockerfile for appserver.io webserver service
 ################################################################################
 
 # base image
@@ -15,7 +15,7 @@ ENV APPSERVER_RUNTIME_BUILD_VERSION 1.1.1-39
 ENV APPSERVER_SOURCE_VERSION 1.1.1-alpha7
 
 # define service to build
-ENV APPSERVER_SERVICE servlet-engine
+ENV APPSERVER_SERVICE webserver
 
 # install packages
 RUN apt-get update && \
@@ -59,10 +59,10 @@ RUN cd /root && wget https://github.com/appserver-io/appserver/archive/${APPSERV
 ################################################################################
 
 # add configuration files
-COPY ${APPSERVER_SOURCE_VERSION}/${APPSERVER_SERVICE}/etc/supervisor/conf.d/supervisord.conf /etc/supervisor/conf.d/
+COPY ${APPSERVER_SERVICE}/etc/supervisor/conf.d/supervisord.conf /etc/supervisor/conf.d/
 
 # override generic appserver.io service configuration
-COPY ${APPSERVER_SOURCE_VERSION}/${APPSERVER_SERVICE}/opt/appserver/etc/appserver/appserver.xml /opt/appserver/etc/appserver
+COPY ${APPSERVER_SERVICE}/opt/appserver/etc/appserver/appserver.xml /opt/appserver/etc/appserver
 
 ################################################################################
 

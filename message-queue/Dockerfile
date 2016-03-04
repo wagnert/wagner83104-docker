@@ -59,10 +59,10 @@ RUN cd /root && wget https://github.com/appserver-io/appserver/archive/${APPSERV
 ################################################################################
 
 # add configuration files
-COPY ${APPSERVER_SOURCE_VERSION}/${APPSERVER_SERVICE}/etc/supervisor/conf.d/supervisord.conf /etc/supervisor/conf.d/
+COPY ${APPSERVER_SERVICE}/etc/supervisor/conf.d/supervisord.conf /etc/supervisor/conf.d/
 
 # override generic appserver.io service configuration
-COPY ${APPSERVER_SOURCE_VERSION}/${APPSERVER_SERVICE}/opt/appserver/etc/appserver/appserver.xml /opt/appserver/etc/appserver
+COPY ${APPSERVER_SERVICE}/opt/appserver/etc/appserver/appserver.xml /opt/appserver/etc/appserver
 
 ################################################################################
 
