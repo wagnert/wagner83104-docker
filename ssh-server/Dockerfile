@@ -5,7 +5,7 @@
 FROM ubuntu:14.04
 MAINTAINER Sven Dowideit <SvenDowideit@docker.com>
 
-RUN apt-get update && apt-get install -y openssh-server
+RUN apt-get update && apt-get install -y openssh-server rsync
 RUN mkdir /var/run/sshd
 RUN echo 'root:screencast' | chpasswd
 RUN sed -i 's/PermitRootLogin without-password/PermitRootLogin yes/' /etc/ssh/sshd_config
