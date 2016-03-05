@@ -2,8 +2,8 @@
 <appserver xmlns="http://www.appserver.io/appserver"  xmlns:xi="http://www.w3.org/2001/XInclude">
 
     <params>
-        <param name="user" type="string">www-data</param>
-        <param name="group" type="string">www-data</param>
+        <param name="user" type="string">root</param>
+        <param name="group" type="string">root</param>
         <param name="umask" type="string">0002</param>
         <param name="allowApplicationConfiguration" type="boolean">true</param>
     </params>
